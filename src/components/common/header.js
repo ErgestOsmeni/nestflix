@@ -28,15 +28,15 @@ const LogoContainer = styled.Image`
 
 class Header extends Component {
   static propTypes = {
-    openDrawer: PropTypes.func.isRequired
+    toggleDrawer: PropTypes.func.isRequired
   };
 
   render() {
-    const { openDrawer } = this.props;
+    const { toggleDrawer } = this.props;
 
     return (
       <Container>
-        <TouchableWithoutFeedback>
+        <TouchableWithoutFeedback onPress={toggleDrawer}>
           <IconContainer>
             <Icon name={"bars"} size={30} color={COLORS.GREY.BRIGHT_GREY} />
           </IconContainer>

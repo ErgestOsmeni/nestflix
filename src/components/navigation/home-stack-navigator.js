@@ -8,7 +8,6 @@ const HomeStackNavigator = createStackNavigator(
     Main: { screen: HomeScreen },
     ShowDetails: { screen: ShowDetailsScreen }
   },
-
   {
     initialRouteName: "Main",
     headerMode: "none"

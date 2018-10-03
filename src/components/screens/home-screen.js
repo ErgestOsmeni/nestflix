@@ -11,14 +11,14 @@ import ShowData from "data/data";
 import Icon from "react-native-vector-icons/FontAwesome";
 
 const Container = styled.View`
-  display: flex;
+  flex: 1;
   width: 100%;
   height: 100%;
   background-color: ${COLORS.GREY.BLACK_RUSSIAN};
 `;
 
 const UserNavigationContainer = styled.View`
-  display: flex;
+  flex: 1;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -94,21 +94,15 @@ const IconContainer = styled.View`
 `;
 
 class HomeScreen extends Component {
-  constructor(props) {
-    super(props);
+  state = {
+    selected: "browse"
+  };
 
-    this.state = {
-      selected: "browse"
-    };
-
-    this.setActiveUserNavigation = this.setActiveUserNavigation.bind(this);
-  }
-
-  setActiveUserNavigation(selected) {
+  setActiveUserNavigation = selected => {
     this.setState({
       selected
     });
-  }
+  };
 
   renderUserNavigation() {
     const userNavigation = [
@@ -148,9 +142,7 @@ class HomeScreen extends Component {
   render() {
     return (
       <Container>
-        <Header
-          openDrawer={() => this.props.navigation.navigate("DrawerOpen")}
-        />
+        <Header toggleDrawer={() => this.props.navigation.toggleDrawer()} />
 
         <UserNavigationContainer>
           {this.renderUserNavigation()}
