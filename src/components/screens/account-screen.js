@@ -18,26 +18,31 @@ const Container = styled.View`
 `;
 
 const HelloContainer = styled.View`
-  flex: 1;
   background-color: ${COLORS.GREY.BRIGHT_GREY};
-  align-items: center;
-  justify-content: center;
+  padding-top: 10;
+  padding-right: 10;
+  padding-left: 10;
+  padding-bottom: 10;
 `;
 
 const HelloText = styled.Text`
   color: ${COLORS.WHITE.WHITE};
 `;
 
-class TestScreen extends Component {
+class AccountScreen extends Component {
   render() {
     return (
       <Container>
+        <Header
+          toggleDrawer={() => this.props.navigation.toggleDrawer()}
+          home={() => this.props.navigation.navigate("Home")}
+        />
         <HelloContainer>
-          <HelloText>Test Screen</HelloText>
+          <HelloText>Account Screen</HelloText>
         </HelloContainer>
       </Container>
     );
   }
 }
 
-export default TestScreen;
+export default AccountScreen;

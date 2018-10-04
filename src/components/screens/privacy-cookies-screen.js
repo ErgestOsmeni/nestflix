@@ -15,8 +15,6 @@ const Container = styled.View`
   width: 100%;
   height: 100%;
   background-color: ${COLORS.GREY.BLACK_RUSSIAN};
-  align-items: center;
-  justify-content: center;
 `;
 
 const HelloContainer = styled.View`
@@ -31,16 +29,20 @@ const HelloText = styled.Text`
   color: ${COLORS.WHITE.WHITE};
 `;
 
-class TestScreen2 extends Component {
+class PrivacyCookiesScreen extends Component {
   render() {
     return (
       <Container>
+        <Header
+          toggleDrawer={() => this.props.navigation.toggleDrawer()}
+          home={() => this.props.navigation.navigate("Home")}
+        />
         <HelloContainer>
-          <HelloText>Test Screen 2</HelloText>
+          <HelloText>Privacy Screen </HelloText>
         </HelloContainer>
       </Container>
     );
   }
 }
 
-export default TestScreen2;
+export default PrivacyCookiesScreen;

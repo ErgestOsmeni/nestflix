@@ -37,7 +37,13 @@ class SettingsScreen extends Component {
   render() {
     return (
       <Container>
-        <TouchableOpacity onPress={() => this.props.navigation.navigate("Home")}>
+        <Header
+          toggleDrawer={() => this.props.navigation.toggleDrawer()}
+          home={() => this.props.navigation.navigate("Home")}
+        />
+        <TouchableOpacity
+          onPress={() => this.props.navigation.navigate("Home")}
+        >
           <BackIconContainer>
             <Icon name={"arrow-left"} size={30} color={COLORS.WHITE.WHITE} />
           </BackIconContainer>

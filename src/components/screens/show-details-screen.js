@@ -73,7 +73,6 @@ const MyListButton = styled.View`
 
 const MyListButtonText = styled.Text`
   color: ${COLORS.WHITE.WHITE};
-
   margin-left: 5;
 `;
 

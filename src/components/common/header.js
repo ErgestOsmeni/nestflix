@@ -28,11 +28,12 @@ const LogoContainer = styled.Image`
 
 class Header extends Component {
   static propTypes = {
-    toggleDrawer: PropTypes.func.isRequired
+    toggleDrawer: PropTypes.func.isRequired,
+    home: PropTypes.func.isRequired
   };
 
   render() {
-    const { toggleDrawer } = this.props;
+    const { toggleDrawer, home } = this.props;
 
     return (
       <Container>
@@ -42,7 +43,9 @@ class Header extends Component {
           </IconContainer>
         </TouchableWithoutFeedback>
 
-        <LogoContainer source={NETFLIX_LOGO} />
+        <TouchableWithoutFeedback onPress={home}>
+          <LogoContainer source={NETFLIX_LOGO} />
+        </TouchableWithoutFeedback>
 
         <TouchableWithoutFeedback onPress={() => {}}>
           <IconContainer>

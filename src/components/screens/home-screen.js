@@ -142,7 +142,10 @@ class HomeScreen extends Component {
   render() {
     return (
       <Container>
-        <Header toggleDrawer={() => this.props.navigation.toggleDrawer()} />
+        <Header
+          toggleDrawer={() => this.props.navigation.toggleDrawer()}
+          home={() => this.props.navigation.navigate("home")}
+        />
 
         <UserNavigationContainer>
           {this.renderUserNavigation()}
